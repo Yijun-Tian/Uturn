@@ -14,11 +14,15 @@ Change source code in extractSoftclipped.c to retain first alignmentment informa
 
 Editing line 22 in extractSoftclippedRetain.c as below
 
-`fprintf(of, "@%s|%s|%i|%"PRId32"|", bam_get_qname(b), hdr->target_name[b->core.tid], b->core.flag, b->core.pos+1);<br />
-   for(j=0; j<b->core.n_cigar; j++) {<br />
-       fprintf(of, "%i%c", bam_cigar_oplen(cigar[j]), BAM_CIGAR_STR[bam_cigar_op(cigar[j])]);<br />
-   }<br />
-   fprintf(of, "\n");`
+```
+ fprintf(of, "@%s|%s|%i|%"PRId32"|", bam_get_qname(b), hdr->target_name[b->core.tid], b->core.flag, b->core.pos+1);
+ for(j=0; j<b->core.n_cigar; j++) {
+   fprintf(of, "%i%c", bam_cigar_oplen(cigar[j]), BAM_CIGAR_STR[bam_cigar_op(cigar[j])]);
+   }
+ fprintf(of, "\n");
+```
+   
+
 
 
 
