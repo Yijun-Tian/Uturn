@@ -1,6 +1,6 @@
 # $1 is the input FASTQ file name, $2 is the base name for all output, adjust --threads by your PC resources to get best performance
 bowtie2 --threads 4 --very-sensitive-local -x ensembl_hg38_clean -U $1 -S $2.primaryalign.raw.sam
-
+# XM tag (maximum mismatch number in alignment) and MAPQ score filtering could be optimized, defaut allow maximal 2 mismatch and MAPQ score larger than 10
 samtools view -@4 -Sh $2.primaryalign.raw.sam | grep -e "^@" -e "XM:i:[012][^0-9]" | samtools view -bS -q 10 - > $2.primaryalign.bam
 
 samtools flagstat $2.primaryalign.raw.sam > $2.primary.stat.txt
@@ -8,10 +8,11 @@ samtools flagstat $2.primaryalign.bam > $2.primary.filtered.stat.txt
 
 samtools view -H $2.primaryalign.bam > $2.BAM.header
 
+#extractSoftclippedRetain report sequences in FASTQ as forward direction, so need adjust read sequences on negative strand with seqkit to make it the same strand with raw reads 
 samtools view $2.primaryalign.bam | awk '{if($2==0) print $0;}' | cat $2.BAM.header - | extractSoftclippedRetain -l 20 - > $2.softclip_for.fastq.gz
 samtools view $2.primaryalign.bam | awk '{if($2==16) print $0;}' | cat $2.BAM.header - | extractSoftclippedRetain -l 20 - | seqkit seq -r -p -v -t dna - | gzip - > $2.softclip_rev.fastq.gz
 
-pigz -c -d -k $2.softclip_for.fastq.gz $2.softclip_rev.fastq.gz | pigz - > $2.softclip.fastq.gz
+cat $2.softclip_for.fastq.gz $2.softclip_rev.fastq.gz > $2.softclip.fastq.gz
 
 bowtie2 --threads 4 --very-sensitive-local -x ensembl_hg38_clean -U $2.softclip.fastq.gz -S $2.softclip.raw.sam
 
