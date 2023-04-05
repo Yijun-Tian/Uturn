@@ -33,7 +33,16 @@ Change Makefile accordingly
 Make and make sure extractSoftclippedRetain runs smoothly
 
 ## How to run the pipeline ??
+Drop the FASTQ files in the currently directory and run
 
+`bash findUturn.sh`
+
+The pipeline will generate multiple output file. A brief description is listed below
+UR.txt
+PR.txt
+Uturn.profile file 
+Port.profile file
+Pattern.txt
 
    
 
