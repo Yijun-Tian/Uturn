@@ -30,6 +30,7 @@ Change Makefile accordingly
   clean:
 	       rm -f *.o compactRepeats extractSoftclipped compareGroups extractSoftclippedRetain
 ```
+Make and make sure extractSoftclippedRetain runs smoothly
    
 
 
