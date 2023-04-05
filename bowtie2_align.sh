@@ -1,5 +1,6 @@
+# $1 is the input FASTQ file name, $2 is the base name for all output
 bowtie2 --threads 4 --very-sensitive-local -x ensembl_hg38_clean -U $1 -S $2.primaryalign.raw.sam
-wait
+
 samtools view -@4 -Sh $2.primaryalign.raw.sam | grep -e "^@" -e "XM:i:[012][^0-9]" | samtools view -bS -q 10 - > $2.primaryalign.bam
 
 samtools flagstat $2.primaryalign.raw.sam > $2.primary.stat.txt
