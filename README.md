@@ -2,7 +2,7 @@
 Identifying DNA U-turn from whole-genome sequencing reads. The DNA U-turn is a special DNA structure that aligns across postivie and negative strands. This project mainly uses two-step mapping approach to find this structure in next generation sequencing data.
 
 ## Prerequisition
-The pipeline prerequisition includes bowtie2, gawk, cutadapt, seqkit, samtools and SE-MEI (extractSoftclippedRetain) in PATH.
+The pipeline prerequisition includes bowtie2, gawk, cutadapt, seqkit, samtools, parallel and SE-MEI (extractSoftclippedRetain) in PATH.
 ## Instructions of compiling SE-MEI
 Download SE-MEI source code from Devon Ryan's repository. Make sure to include htslib submodule (f3e1602196bbf03f426dfb363a4841932a042194) using --recursive
 
