@@ -31,6 +31,10 @@ Change Makefile accordingly
 	       rm -f *.o compactRepeats extractSoftclipped compareGroups extractSoftclippedRetain
 ```
 Make and make sure extractSoftclippedRetain runs smoothly
+
+## How to run the pipeline ??
+
+
    
 
 
