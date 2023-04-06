@@ -38,15 +38,8 @@ Drop the FASTQ files in the currently directory and run
 `bash findUturn.sh`
 
 The pipeline will generate multiple output file. A brief description is listed below
-UR.txt
-PR.txt
-Uturn.profile file 
-Port.profile file
-Pattern.txt
-
-   
-
-
-
-
-
+UR.txt is a space delimited file with three columns: read id, chrmosome:jump1-jump2, uturn type (left or right)
+PR.txt is a space delimited file with two columns: read id, chrmosome:breakpoint1-breakpoint2
+Uturn.profile is a space delimited file with two columns: chromosome:jump1-jump2, read count supporting the uturn event
+Port.profile is a space delimited file with two columns: chromosome:breakpoint1-breakpoint2, read count supporting the porting event
+Pattern.txt is a space delimited file with three columns: chromosome:jump1-jump2, read count of left uturn, read count of right uturn
