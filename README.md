@@ -35,7 +35,7 @@ Change Makefile accordingly
 Make and make sure extractSoftclippedRetain runs smoothly
 
 ## Run the pipeline
-Drop the FASTQ files in the currently directory and run
+Drop the FASTQ files in the current directory and run
 
 `bash findUturn.sh`
 
