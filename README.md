@@ -32,14 +32,15 @@ Change Makefile accordingly
 ```
 Make and make sure extractSoftclippedRetain runs smoothly
 
-## How to run the pipeline ??
+## Run the pipeline
 Drop the FASTQ files in the currently directory and run
 
 `bash findUturn.sh`
 
-The pipeline will generate multiple output file. A brief description is listed below
-UR.txt is a space delimited file with three columns: read id, chrmosome:jump1-jump2, uturn type (left or right)
-PR.txt is a space delimited file with two columns: read id, chrmosome:breakpoint1-breakpoint2
-Uturn.profile is a space delimited file with two columns: chromosome:jump1-jump2, read count supporting the uturn event
-Port.profile is a space delimited file with two columns: chromosome:breakpoint1-breakpoint2, read count supporting the porting event
-Pattern.txt is a space delimited file with three columns: chromosome:jump1-jump2, read count of left uturn, read count of right uturn
+The pipeline will generate multiple output file. A brief description is listed below:  
+1.  UR.txt is a space delimited file with three columns: read id, chrmosome:jump1-jump2, uturn type (left or right)  
+2.  PR.txt is a space delimited file with two columns: read id, chrmosome:breakpoint1-breakpoint2  
+3.  Uturn.profile is a space delimited file with two columns: chromosome:jump1-jump2, read count supporting the uturn event  
+4.  Port.profile is a space delimited file with two columns: chromosome:breakpoint1-breakpoint2, read count supporting the porting event  
+5.  Pattern.txt is a space delimited file with three columns: chromosome:jump1-jump2, read count of left uturn, read count of right uturn  
+6.  ReadStart.txt is a space delimited file with four columns: read id, chromosome, readstart position on reference, reference strand of read start mapping to
