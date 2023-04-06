@@ -34,11 +34,15 @@ samtools index $i.UR.softclip.bam
 samtools index $i.UR.N2P.softclip.bam
 samtools index $i.UR.P2N.softclip.bam
 
+#make sure $i.UR.softclip.bam is in the same dir for read start run
+bash findReadstart.sh $i.primaryalign.bam
+
 cut -f 1 -d " " $i.PR.txt > $i.PRList
 samtools view -@10 $i.primaryalign.bam | grep -w -F -f $i.PRList | cat $i.BAM.header - | samtools sort -@5 -o $i.PR.primary.bam
 samtools view -@10 $i.softclip.bam | grep -w -F -f $i.PRList | cat $i.softclip.header - | samtools sort -@5 -o $i.PR.softclip.bam
 samtools index $i.PR.primary.bam
 samtools index $i.PR.softclip.bam
+
 
 echo Sample $i completed
 done
