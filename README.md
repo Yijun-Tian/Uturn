@@ -32,7 +32,7 @@ Change Makefile accordingly
   clean:
 	       rm -f *.o compactRepeats extractSoftclipped compareGroups extractSoftclippedRetain
 ```
-Make and make sure extractSoftclippedRetain runs smoothly
+Make and make sure extractSoftclippedRetain runs smoothly, then add SE-MEI dir to your PATH
 
 ## Run the pipeline
 Drop the FASTQ files in the current directory and run
