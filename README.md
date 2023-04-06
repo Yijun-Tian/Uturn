@@ -4,7 +4,7 @@ Identifying DNA U-turn from whole-genome sequencing reads. The DNA U-turn is a s
 ## Prerequisition
 The pipeline prerequisition includes bowtie2, gawk, cutadapt, seqkit, samtools, parallel and SE-MEI (extractSoftclippedRetain) in PATH.
 ## Instructions of compiling SE-MEI
-Download SE-MEI source code from Devon Ryan's repository. Make sure to include htslib submodule (f3e1602196bbf03f426dfb363a4841932a042194) using --recursive
+Download SE-MEI source code from Devon Ryan's repository. Make sure to include htslib submodule using --recursive
 
 `git clone --recursive https://github.com/dpryan79/SE-MEI.git`
 
