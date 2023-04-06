@@ -1,5 +1,7 @@
 # Uturn
-Identifying DNA U-turn from whole-genome sequencing reads. The DNA U-turn is a special DNA structure that aligns across postivie and negative strands. This project mainly uses two-step mapping approach to find this structure in next generation sequencing data.
+Identifying DNA U-turn from whole-genome sequencing reads. The DNA U-turn is a special DNA structure that aligns across postivie and negative strands. This project mainly uses two-step mapping approach to find this structure in next generation sequencing data.  
+
+![Model](https://github.com/Yijun-Tian/Uturn/blob/main/uturnRepoimapge.tif) 
 
 ## Prerequisition
 The pipeline prerequisition includes bowtie2, gawk, cutadapt, seqkit, samtools, parallel and SE-MEI (extractSoftclippedRetain) in PATH.
