@@ -10,7 +10,7 @@ Download SE-MEI source code from Devon Ryan's repository. Make sure to include h
 
 `git clone --recursive https://github.com/dpryan79/SE-MEI.git`
 
-Change source code in extractSoftclipped.c to retain first alignmentment information in the output FASTQ header. The new code was named "extractSoftclippedRetain.c"
+Change source code in extractSoftclipped.c to retain first alignmentment information in the output FASTQ header. The modified source code was named "extractSoftclippedRetain.c"
 
 `cp extractSoftclipped.c extractSoftclippedRetain.c`
 
